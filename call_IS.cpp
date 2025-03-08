@@ -5,7 +5,7 @@
 #include <iostream>
 #include "InstructionSet.cpp"
 using namespace std;
-
+//hi
 int program_counter;
 
 void program_zero()
@@ -125,7 +125,7 @@ string final_machinecode(string line)
          rs1=machineCode.substr(12,5);
          rs2=machineCode.substr(7,5);
          funct7=machineCode.substr(0,7);
-        outputFile << "0x" << program_hex() << " " << to_hex(machineCode)<<" "<<","<<" "<<instructionLine<<" "<<"#"<<" " << opcode<<"-"<<funct3 <<"-" <<funct7<<"-"<<rd<<"-"<<rs1<<"-"<<rs2<<"-"<<"NULL"<<endl;
+        outputFile << "0x" << program_hex() << " " << to_hex(machineCode)<<" "<<","<<" "<<instructionLine<<" "<<"#"<<" " << opcode<<"-"<<funct3 <<"-"<<funct7<<"-"<<rd<<"-"<<rs1<<"-"<<rs2<<"-"<<"NULL"<<endl;
         program_counter += 4;
     }
 
@@ -141,7 +141,7 @@ string final_machinecode(string line)
         rs2=machineCode.substr(7,5);
         funct7=machineCode.substr(0,7);
         imm=funct7+rs2;
-        outputFile << "0x" << program_hex() << " " << to_hex(machineCode)<<" "<<","<<" "<<instructionLine<<" "<<"#"<<" " <<opcode<<"-"<<funct3 <<"-"<<rd<<"-"<<rs1<<"-"<<"NULL"<<"-"<<imm<<endl;
+        outputFile << "0x" << program_hex() << " " << to_hex(machineCode)<<" "<<","<<" "<<instructionLine<<" "<<"#"<<" " <<opcode<<"-"<<funct3 <<"-"<<"NULL"<<"-"<<rd<<"-"<<rs1<<"-"<<"NULL"<<"-"<<imm<<endl;
         program_counter += 4;
     }
 
@@ -157,7 +157,7 @@ string final_machinecode(string line)
         rs2=machineCode.substr(7,5);
         funct7=machineCode.substr(0,7);
         imm=funct7+rd;
-        outputFile << "0x" << program_hex() << " " << to_hex(machineCode)<<" "<<","<<" "<<instructionLine<<" "<<"#"<<" " <<opcode<<"-"<<funct3 <<"-" <<"NULL"<<"-"<<rs1<<"-"<<rs2<<"-"<<imm<<endl;
+        outputFile << "0x" << program_hex() << " " << to_hex(machineCode)<<" "<<","<<" "<<instructionLine<<" "<<"#"<<" " <<opcode<<"-"<<funct3 <<"-"<<"NULL"<<"-" <<"NULL"<<"-"<<rs1<<"-"<<rs2<<"-"<<imm<<endl;
         program_counter += 4;
     }
 
@@ -176,7 +176,7 @@ string final_machinecode(string line)
         imm2=machineCode.substr(1,6)+machineCode.substr(20,4);
         imm=imm1+imm2;
 
-        outputFile << "0x" << program_hex() << " " << to_hex(machineCode)<<" "<<","<<" "<<instructionLine<<" "<<"#"<<" " <<opcode<<"-"<<funct3 <<"-"<<"NULL"<<"-"<<rs1<<"-"<<rs2<<"-"<<imm<<endl;
+        outputFile << "0x" << program_hex() << " " << to_hex(machineCode)<<" "<<","<<" "<<instructionLine<<" "<<"#"<<" " <<opcode<<"-"<<funct3 <<"-"<<"NULL"<<"-"<<"NULL"<<"-"<<rs1<<"-"<<rs2<<"-"<<imm<<endl;
         program_counter += 4;
     }
 
@@ -191,7 +191,7 @@ string final_machinecode(string line)
         rs2=machineCode.substr(7,5);
         funct7=machineCode.substr(0,7);
         imm=funct7+rs2+rs1;
-        outputFile << "0x" << program_hex() << " " << to_hex(machineCode)<<" "<<","<<" "<<instructionLine<<" "<<"#"<<" " <<opcode<<"-"<<rd<<"-"<<"NULL"<<"-"<<"NULL"<<"-"<<imm<<endl;
+        outputFile << "0x" << program_hex() << " " << to_hex(machineCode)<<" "<<","<<" "<<instructionLine<<" "<<"#"<<" " <<opcode<<"-"<<"NULL"<<"-"<<"NULL"<<"-"<<rd<<"-"<<"NULL"<<"-"<<"NULL"<<"-"<<imm<<endl;
         program_counter += 4;
     }
 
@@ -207,10 +207,11 @@ string final_machinecode(string line)
         funct7=machineCode.substr(0,7);
         imm=machineCode[0]+machineCode.substr(12,8)+machineCode[11]+machineCode.substr(1,10);
 
-        outputFile << "0x" << program_hex() << " " << to_hex(machineCode)<<" "<<","<<" "<<instructionLine<<" "<<"#"<<" "<<opcode<<"-"<<rd<<"-"<<"NULL"<<"-"<<"NULL"<<"-"<<imm<<endl;
+        outputFile << "0x" << program_hex() << " " << to_hex(machineCode)<<" "<<","<<" "<<instructionLine<<" "<<"#"<<" "<<opcode<<"-"<<"NULL"<<"-"<<"NULL"<<"-"<<rd<<"-"<<"NULL"<<"-"<<"NULL"<<"-"<<imm<<endl;
         program_counter += 4;
     }
     //  "output.mc" << machineCode << endl;
 
     return "";
 }
+//new
